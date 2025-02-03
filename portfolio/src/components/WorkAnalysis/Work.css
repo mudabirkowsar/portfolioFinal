@@ -1,0 +1,128 @@
+.workContainerMain {
+    height: 90vh;
+    width: 100%;
+    /* border: 2px solid black; */
+    background-image: url("../../img/post-3.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.tasksDiv {
+    height: 60%;
+    width: 100%;
+    background-color: #00bcd4;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.udiv {
+    height: 20%;
+    background-color: rgba(255, 255, 255, 0.918);
+    width: 100%;
+}
+
+.zyx {
+    height: 20%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.918);
+}
+
+.serviceIconsDiv {
+    height: 200px;
+    width: 100%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicesIcon {
+    height: 100%;
+    width: 15%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fa-check,
+.fa-person,
+.fa-award,
+.fa-calendar-days {
+    font-size: 40px;
+    padding: 0px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid white;
+    border-radius: 100px;
+    /* color: white; */
+}
+
+.servicesIcon p {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@media (max-width: 767px) {
+
+    .tasksDiv {
+        height: 70%;
+        width: 100%;
+        background-color: #00bcd4;
+        opacity: 0.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid black; */
+    }
+
+    .serviceIconsDiv {
+        height: 100%;
+        width: 100%;
+        /* border: 2px solid green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .servicesIcon {
+        /* height: 100%; */
+        width: 50%;
+        height: 100px;
+        /* width: 100px; */
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .fa-check,
+    .fa-person,
+    .fa-award,
+    .fa-calendar-days {
+        font-size: 30px;
+        height: 50px;
+        width: 50px;
+        padding: 30px;
+        border-radius: 100%;
+        /* color: white; */
+    }
+    .servicesIcon p {
+        color: white;
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+
+}

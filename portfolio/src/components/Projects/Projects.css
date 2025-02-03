@@ -1,0 +1,93 @@
+.projectImageDiv {
+    height: 70%;
+    width: 100%;
+    /* border: 2px solid black; */
+    overflow: hidden;
+}
+
+.projectImageDiv img {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.projectImageDiv img:hover {
+    transform: scale(1.1);
+    transition: all 1s ease;
+}
+
+.projectNameDiv {
+    height: 30%;
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nameAndDescDiv {
+    padding-left: 10px;
+    height: 100%;
+    width: 70%;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.btnProjectDiv {
+    width: 30%;
+    height: 100%;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pName {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.pDic {
+    color: #333;
+}
+
+.fa-plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    border: 2px solid #00bcd4;
+    border-radius: 35px;
+    color: #00bcd4;
+    cursor: pointer;
+}
+
+
+@media (max-width: 767px) {
+
+    .fa-plus {
+        font-size: 22px;
+        height: 40px;
+        width: 40px;
+    }
+    .pName{
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    .pDic{
+        font-size: 14px;
+    }
+    .servicesText{
+        font-size: 40px;
+    }
+    .servicesTextpara{
+        font-size: 20px;
+    }
+
+}

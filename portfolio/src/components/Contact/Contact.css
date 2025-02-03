@@ -1,0 +1,168 @@
+*{
+    text-decoration: none;
+}
+
+.contactMainDiv{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(218, 216, 216, 0.532);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactDiv{
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.inputDiv, .contactDivText{
+    height: 100%;
+    width: 50%;
+    /* border: 2px solid black; */
+    padding: 40px;
+}
+
+
+
+.inputDiv p{
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+.inputDiv p span{
+    text-decoration: underline;
+    text-decoration-color: #4CAF50;
+}
+
+.inputDiv input{
+    padding: 10px;
+    height: 40px;
+    width: 90%;
+    margin-bottom: 20px;
+    /* border: 1px solid black; */
+}
+
+.inputDiv input:active{
+    border: 2px solid #4CAF50;
+}
+.inputDiv textarea{
+    padding: 10px;
+    height: 90px;
+    width: 90%;
+    margin-bottom: 20px;
+    resize: none;
+    /* border: 1px solid black; */
+}
+
+.inputDiv button{
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    border: 1px solid #4CAF50;
+    color: white;
+    font-size: 24px;
+    background-color: #4CAF50;
+}
+
+.inputDiv button:hover{
+    background-color: #84df87;
+}
+
+.Contact{
+    font-size: 40px;
+}
+
+.Contact span{
+    text-decoration: underline;
+    text-decoration-color: #4CAF50;
+}
+
+.contactDics{
+    font-size: 22px;
+    color: #222;
+    margin-top: 10px;
+}
+
+.locationDiv{
+    width: 100%;
+    /* border: 2px solid black; */
+    margin-top: 52px;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+.locationDiv i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    border: 2px solid #4CAF50;
+    font-size: 28px;
+    color: black;
+}
+
+.locationDiv i:hover{
+    transition: all 1s ease-in-out;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+}
+
+
+@media (max-width: 767px) {
+    .contactMainDiv{
+        margin: 0;
+        padding: 0;
+    }
+    .contactDiv{
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        width: 100%;  
+        background-color: rgba(218, 216, 216, 0.532);
+        flex-direction: column-reverse;
+    }
+
+    .inputDiv{
+        width: 100%;
+    }
+
+    .inputDiv button{
+        height: 40px;
+        width: 100px;
+        font-size: 22px;
+    }
+
+    .inputDiv p{
+        font-size: 20px;
+    }
+
+    .contactDivText{
+        width: 100%;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .Contact{
+        font-size: 20px;
+    }
+
+    .contactDics{
+        font-size: 16px;
+    }
+    .locationDiv i{
+        height: 35px;
+        width: 35px;
+        font-size: 22px;
+    }
+}

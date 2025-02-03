@@ -1,0 +1,79 @@
+.extraMainDiv{
+    height: 100vh;
+    width: 100%;
+    /* border: 2px solid black; */
+    background-color: rgba(218, 216, 216, 0.532);
+    background-image: url("../../img/post-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
+}
+.extraUpperDiv{
+    height: 15%;
+    width: 100%;
+    /* border: 2px solid black; */
+    background-color: rgba(255, 255, 255, 0.918);
+}
+.extraContentDiv{
+    z-index: -10;
+    width: 100%;
+    height: 70%;
+    /* border: 2px solid red; */
+    background-color: #00bcd4;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.extraLowerDiv{
+    height: 15%;
+    width: 100%;
+    /* border: 2px solid black; */
+    background-color: rgba(255, 255, 255, 0.918);
+}
+.extraImageDiv{
+    z-index: 10;
+    height: 120px;
+    width: 120px;
+    border: 5px solid white;
+    border-radius: 60px;
+    margin-bottom: 10px;
+}
+
+.extraImageDiv img{
+    height: 100%;
+    width: 100%;
+    border-radius: 60px;
+    opacity: 1;
+}
+
+.extraHeadingdiv{
+    margin-bottom: 20px;
+}
+
+.extraHeadingdiv p{
+    color: white;
+    font-size: 45px;
+}
+.extraDicDiv{
+    width: 70%;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+.fa-quote-left{
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .extraHeadingdiv p{
+        font-size: 30px;
+    }
+    .extraDicDiv{
+        font-size: 18px;
+        line-height: 20px;
+    }
+}
