@@ -25,7 +25,7 @@ function App() {
     duration={400}
     />
 
-    {/* <SplashCursor/> */}
+    <SplashCursor/>
       {/* <Navbar/> */}
       {/* <AboutMe/>
       <Services/>
