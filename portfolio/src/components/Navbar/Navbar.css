@@ -31,7 +31,6 @@ body {
 }
 
 .navbarContainer {
-    z-index: 1;
     padding: 0;
     margin: 0;
     display: flex;
@@ -45,7 +44,7 @@ body {
 }
 
 .faltuDiv {
-    height: 10vh;
+    height: 4vh;
     width: 100%;
 }
 .logoDiv {
@@ -127,7 +126,6 @@ body {
 
 
 .navbarContainer {
-    z-index: -1;
     padding: 0;
     margin: 0;
     display: flex;
@@ -191,7 +189,7 @@ body {
     }
 
     .mainContentMainContainer {
-        height: 90vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -215,9 +213,11 @@ body {
         background-color: rgba(0, 0, 0, 0.742);
     }
     .fa-bars{
+        position: absolute;
+        right: 20px;
+        top: 30px;
         font-size: 28px;
         color: white;
-        z-index: 1;
     }
    
     .LinksDivMobile{
@@ -239,19 +239,9 @@ body {
         gap: 30px;
     }
     .logoDiv{
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-        align-items:center;
-        padding-left: 30px;
+        width: 30%;
         
     }
     
     
 }
-
-
-
-
-/* Default navbar styles */
-

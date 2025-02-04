@@ -9,7 +9,6 @@ import TextPressure from "../Shiny/TextPressure";
 import TrueFocus from "../Shiny/TrueFocus";
 import SplitText from "../Shiny/SplitText";
 import SplashCursor from "../Shiny/SplashCursor";
-import ClickSpark from "../Shiny/ClickSpark";
 
 function Navbar() {
   const roles = ["", "Full Stack Developer", "Frontend Developer", "", "Backend Developer", "Web Designer"];
@@ -61,15 +60,15 @@ function Navbar() {
 
     // Cleanup event listener
     return () => {
-      window.removeEventListener("scroll", handleScroll);   
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const openNavbar = () => {
-    setShowNavbar(!showNavbar); 
+    setShowNavbar(!showNavbar);
   };
 
-  const navbarO = () =>{
+  const navbarO = () => {
     setShowNavbar(!showNavbar)
   }
 
@@ -83,7 +82,6 @@ function Navbar() {
     <div className="navbarMainContainer">
       <div className={`navbarContainer ${isScrolled ? "scrolled" : ""}`}>
         <div className="logoDiv">
-          {/* <img src="../../img/logo.png" alt="" /> */}
           <h1>MK</h1>
         </div>
         <div className="LinksDiv">
@@ -108,11 +106,9 @@ function Navbar() {
 
       <div className="navbarContainerMobile">
         <div className="logoDiv">
-        {/* <img src="../../img/logo.png" alt="" /> */}
-        <h1>MK</h1>
-        <i onClick={openNavbar} class="fa-solid fa-bars"></i>
+          <h1>MK</h1>
+          <i onClick={openNavbar} class="fa-solid fa-bars"></i>
         </div>
-        
         {
           showNavbar ?
             <div className="LinksDivMobile">
@@ -138,14 +134,6 @@ function Navbar() {
       <div className="faltuDiv"></div>
 
       <div className="mainContentMainContainer">
-        <ClickSpark
-        sparkColor='#00bcd4'
-        sparkSize={37}
-        sparkRadius={15}
-        sparkCount={8}
-        duration={1000}
-        />
-
         {/* <ShinyText text="I Am Mudabir Kowsar Khanday" disabled={false} speed={3} className='custom-class' /> */}
         {/* <h1>I am Mudabir Kowsar Khanday</h1>  */}
 
@@ -158,7 +146,7 @@ function Navbar() {
         onAnimationComplete={handleAnimationComplete}
         className="text-2xl mb-8"/> */}
 
-{/* 
+        {/* 
         <TrueFocus
         sentence="I Am Mudabir Kowsar Khanday"
         manualMode={false}
@@ -182,22 +170,22 @@ function Navbar() {
         /> */}
 
         <SplitText
-        text="I Am Mudabir Kowsar Khanday "
-        className="text-2xl font-semibold text-center"
-        delay={100}
-        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-        easing="easeOutCubic"
-        threshold={0.2}
-        rootMargin="-50px"
-        onLetterAnimationComplete={handleAnimationComplete}
+          text="I Am Mudabir Kowsar Khanday "
+          className="text-2xl font-semibold text-center"
+          delay={100}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing="easeOutCubic"
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
         />
         <h2 className="typing-text">| {text} |</h2>
-        
+        {/* <SplashCursor/> */}
       </div>
-      <Outlet/>
-      <Contact/>
-      <Footer/>
+      <Outlet />
+      <Contact />
+      <Footer />
     </div>
   );
 }
