@@ -28,7 +28,6 @@ function Contact() {
                     <br />
                     <a href="https://github.com/mudabirkowsar"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    .
                 </div>
             </div>
         </div>
