@@ -45,7 +45,7 @@ function Projects() {
             </div>
             <div className="projectNameDiv">
                 <div className="nameAndDescDiv">
-                    <p className='pName'>Enpense Tracker</p>
+                    <p className='pName'>Expense Tracker</p>
                     <p className='pDic'>An intuitive expense tracker with user authentication and secure data management.</p>
                 </div>
                 <div className="btnProjectDiv">

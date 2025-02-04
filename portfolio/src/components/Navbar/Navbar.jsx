@@ -7,6 +7,8 @@ import ShinyText from "../Shiny/ShinyText";
 import BlurText from "../Shiny/BlurText";
 import TextPressure from "../Shiny/TextPressure";
 import TrueFocus from "../Shiny/TrueFocus";
+import SplitText from "../Shiny/SplitText";
+import SplashCursor from "../Shiny/SplashCursor";
 
 function Navbar() {
   const roles = ["", "Full Stack Developer", "Frontend Developer", "", "Backend Developer", "Web Designer"];
@@ -137,15 +139,15 @@ function Navbar() {
         {/* <ShinyText text="I Am Mudabir Kowsar Khanday" disabled={false} speed={3} className='custom-class' /> */}
         {/* <h1>I am Mudabir Kowsar Khanday</h1>  */}
 
-        <BlurText 
+        {/* <BlurText 
         text="I Am Mudabir Kowsar Khanday"
         delay={150}
         animateBy="words"
         direction="top"
         color="white"
         onAnimationComplete={handleAnimationComplete}
-        className="text-2xl mb-8"/>
-        
+        className="text-2xl mb-8"/> */}
+
 {/* 
         <TrueFocus
         sentence="I Am Mudabir Kowsar Khanday"
@@ -168,7 +170,20 @@ function Navbar() {
         strokeColor="#ff0000"
         minFontSize={20}
         /> */}
+
+        <SplitText
+        text="I Am Mudabir Kowsar Khanday "
+        className="text-2xl font-semibold text-center"
+        delay={100}
+        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+        easing="easeOutCubic"
+        threshold={0.2}
+        rootMargin="-50px"
+        onLetterAnimationComplete={handleAnimationComplete}
+        />
         <h2 className="typing-text">| {text} |</h2>
+        
       </div>
       <Outlet/>
       <Contact/>
