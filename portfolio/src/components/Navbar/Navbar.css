@@ -45,7 +45,7 @@ body {
 }
 
 .faltuDiv {
-    height: 2vh;
+    height: 3vh;
     width: 100%;
 }
 .logoDiv {
@@ -194,7 +194,7 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        border: 2px solid white;
+        /* border: 2px solid white; */
     }
     .mainContentMainContainer h1{
         font-size: 30px;
