@@ -8,17 +8,18 @@ function Services() {
             <p className='servicesTextpara'>I provide full-stack web development services</p>
 
             <div className="servicesMainListDiv">
-                <div className="serviceInnerMainDiv">
-                    <div className="serviceImageDiv">
-                        <i class="fa-solid fa-computer"></i>
+                    <div className="serviceInnerMainDiv">
+                        <div className="serviceImageDiv">
+                            <i class="fa-solid fa-computer"></i>
+                        </div>
+                        <div className="serviceText">
+                            <p>WEB DESIGN</p>
+                        </div>
+                        <div className="serviceDesc">
+                            <p>I create visually appealing, user-friendly, and responsive web designs that enhance user experience. With a focus on modern UI/UX principles, I craft designs that are not only aesthetically pleasing but also highly functional across all devices.</p>
+                        </div>
                     </div>
-                    <div className="serviceText">
-                        <p>WEB DESIGN</p>
-                    </div>
-                    <div className="serviceDesc">
-                        <p>I create visually appealing, user-friendly, and responsive web designs that enhance user experience. With a focus on modern UI/UX principles, I craft designs that are not only aesthetically pleasing but also highly functional across all devices.</p>
-                    </div>
-                </div>
+
 
                 <div className="serviceInnerMainDiv">
                     <div className="serviceImageDiv">
@@ -46,7 +47,7 @@ function Services() {
 
                 <div className="serviceInnerMainDiv">
                     <div className="serviceImageDiv">
-                    <i class="fa-solid fa-mobile"></i>
+                        <i class="fa-solid fa-mobile"></i>
                     </div>
                     <div className="serviceText">
                         <p>RESPONSIVE DESIGN</p>
@@ -58,7 +59,7 @@ function Services() {
 
                 <div className="serviceInnerMainDiv">
                     <div className="serviceImageDiv">
-                    <i class="fa-brands fa-android"></i>
+                        <i class="fa-brands fa-android"></i>
                     </div>
                     <div className="serviceText">
                         <p>APP DEVELOPMENT</p>
@@ -70,7 +71,7 @@ function Services() {
 
                 <div className="serviceInnerMainDiv">
                     <div className="serviceImageDiv">
-                    <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-signal"></i>
                     </div>
                     <div className="serviceText">
                         <p>MARKETING</p>

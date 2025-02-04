@@ -3,11 +3,10 @@ import { Link, Outlet } from "react-router-dom";
 import "./Navbar.css";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
-import Services from "../Services/Services";
-import AboutMe from "../AboutMe/AboutMe";
-import Work from "../WorkAnalysis/Work";
-import Extra from "../Extra/Extra";
-import Projects from "../Projects/Projects";
+import ShinyText from "../Shiny/ShinyText";
+import BlurText from "../Shiny/BlurText";
+import TextPressure from "../Shiny/TextPressure";
+import TrueFocus from "../Shiny/TrueFocus";
 
 function Navbar() {
   const roles = ["", "Full Stack Developer", "Frontend Developer", "", "Backend Developer", "Web Designer"];
@@ -71,6 +70,12 @@ function Navbar() {
     setShowNavbar(!showNavbar)
   }
 
+
+
+  const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+  };
+
   return (
     <div className="navbarMainContainer">
       <div className={`navbarContainer ${isScrolled ? "scrolled" : ""}`}>
@@ -129,7 +134,40 @@ function Navbar() {
       <div className="faltuDiv"></div>
 
       <div className="mainContentMainContainer">
-        <h1>I am Mudabir Kowsar Khanday</h1>
+        {/* <ShinyText text="I Am Mudabir Kowsar Khanday" disabled={false} speed={3} className='custom-class' /> */}
+        {/* <h1>I am Mudabir Kowsar Khanday</h1>  */}
+
+        <BlurText 
+        text="I Am Mudabir Kowsar Khanday"
+        delay={150}
+        animateBy="words"
+        direction="top"
+        color="white"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-2xl mb-8"/>
+        
+{/* 
+        <TrueFocus
+        sentence="I Am Mudabir Kowsar Khanday"
+        manualMode={false}
+        blurAmount={5}
+        borderColor="#00bcd4"
+        animationDuration={4}
+        pauseBetweenAnimations={0.1}
+        /> */}
+
+        {/* <TextPressure
+        text="I Am Mudabir Kowsar!"
+        flex={true}
+        alpha={false}
+        stroke={false}
+        // width={true}
+        weight={true}
+        italic={true}
+        textColor="#ffffff"
+        strokeColor="#ff0000"
+        minFontSize={20}
+        /> */}
         <h2 className="typing-text">| {text} |</h2>
       </div>
       <Outlet/>
