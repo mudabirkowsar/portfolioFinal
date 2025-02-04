@@ -45,7 +45,7 @@ body {
 }
 
 .faltuDiv {
-    height: 3vh;
+    height: 10vh;
     width: 100%;
 }
 .logoDiv {
@@ -127,7 +127,7 @@ body {
 
 
 .navbarContainer {
-    z-index: 1;
+    z-index: -1;
     padding: 0;
     margin: 0;
     display: flex;
@@ -191,12 +191,13 @@ body {
     }
 
     .mainContentMainContainer {
-        height: 100vh;
+        height: 90vh;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         /* border: 2px solid white; */
+        padding: 0px;
     }
     .mainContentMainContainer h1{
         font-size: 30px;
@@ -214,12 +215,11 @@ body {
         background-color: rgba(0, 0, 0, 0.742);
     }
     .fa-bars{
-        position: absolute;
-        right: 20px;
-        top: 30px;
         font-size: 28px;
         color: white;
+        z-index: 1;
     }
+   
     .LinksDivMobile{
         height: 90vh;
         width: 100%;
@@ -239,7 +239,12 @@ body {
         gap: 30px;
     }
     .logoDiv{
-        width: 30%;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        padding-left: 30px;
+        
     }
     
     

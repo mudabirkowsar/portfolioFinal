@@ -9,6 +9,7 @@ import TextPressure from "../Shiny/TextPressure";
 import TrueFocus from "../Shiny/TrueFocus";
 import SplitText from "../Shiny/SplitText";
 import SplashCursor from "../Shiny/SplashCursor";
+import ClickSpark from "../Shiny/ClickSpark";
 
 function Navbar() {
   const roles = ["", "Full Stack Developer", "Frontend Developer", "", "Backend Developer", "Web Designer"];
@@ -109,8 +110,9 @@ function Navbar() {
         <div className="logoDiv">
         {/* <img src="../../img/logo.png" alt="" /> */}
         <h1>MK</h1>
-        </div>
         <i onClick={openNavbar} class="fa-solid fa-bars"></i>
+        </div>
+        
         {
           showNavbar ?
             <div className="LinksDivMobile">
@@ -136,6 +138,14 @@ function Navbar() {
       <div className="faltuDiv"></div>
 
       <div className="mainContentMainContainer">
+        <ClickSpark
+        sparkColor='#00bcd4'
+        sparkSize={37}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={1000}
+        />
+
         {/* <ShinyText text="I Am Mudabir Kowsar Khanday" disabled={false} speed={3} className='custom-class' /> */}
         {/* <h1>I am Mudabir Kowsar Khanday</h1>  */}
 
