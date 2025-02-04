@@ -3,7 +3,8 @@
 }
 
 .contactMainDiv{
-    height: 100vh;
+    /* height: 100vh; */
+    height: auto;
     width: 100%;
     background-color: rgba(218, 216, 216, 0.532);
     display: flex;

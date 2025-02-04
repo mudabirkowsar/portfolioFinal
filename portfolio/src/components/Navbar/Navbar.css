@@ -179,7 +179,7 @@ body {
     }
     .navbarContainer {
         display: none;
-        height: 100vh;
+        height: 10vh;
         padding: 30px;
     }
 
@@ -191,7 +191,7 @@ body {
     }
 
     .mainContentMainContainer {
-        height: 90vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;

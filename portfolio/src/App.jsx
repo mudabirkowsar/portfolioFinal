@@ -10,13 +10,13 @@ function App() {
     <>
     <Routing/>
 
-    <ClickSpark 
+    {/* <ClickSpark 
     sparkColor='#00bcd4'
     sparkSize={37}
     sparkRadius={15}
     sparkCount={8}
     duration={1000}
-    />
+    /> */}
 
     {/* <SplashCursor/> */}
      

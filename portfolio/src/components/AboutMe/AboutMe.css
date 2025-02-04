@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 .aboutMeMainDiv {
-    height: 100vh;
+    /* height: 100vh; */
+    height: auto;
     width: 100%;
     /* border: 2px solid black; */
     background-color: rgba(218, 216, 216, 0.532);
@@ -220,7 +221,7 @@ input[type="range"]::-moz-range-thumb {
 
     .aboutMeUpperDiv {
         padding-top: 20px;
-        height: 20vh;
+        height: 25vh;
         width: 100vw;
         /* border: 2px solid red; */
 
