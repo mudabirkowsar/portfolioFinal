@@ -10,7 +10,7 @@ function Work() {
           <div className="servicesIcon">
             <i class="fa-solid fa-check"></i>
             <br />
-            <p>10</p>
+            <p>20</p>
             <br />
             <p>PROJECTS</p>
           </div>

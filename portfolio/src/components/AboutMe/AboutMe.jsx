@@ -69,13 +69,23 @@ function AboutMe() {
               <input type="range" min="0" max="100" value="75" />
             </div>
 
+            <div className="slideContainer">
+              <label htmlFor="">React Native </label>
+              <span className='percentage'>(70%)</span>
+              <br />
+              <input type="range" min="0" max="100" value="75" />
+            </div>
+
 
 
           </div>
         </div>
         <div className="aboutRightDiv">
           <h1 className='aboutMe'>About Me</h1>
-          <p className='aboutMepara'>Hello! I’m Mudabir, a passionate full-stack web developer with a strong foundation in the MERN stack (MongoDB, Express.js, React, Node.js). I specialize in building dynamic, user-friendly web applications and have experience working with EJS, Mongoose, and session-based authentication.<br /><br /> Currently pursuing my B.Tech in Computer Science at GNA University, I love creating seamless digital experiences, whether it’s an interactive portfolio, an admin dashboard, or a full-fledged e-commerce platform. My projects showcase my ability to merge functionality with aesthetics, and I’m always eager to learn and explore new technologies.<br /> <br />Let’s build something amazing together!</p>
+          <p className='aboutMepara'>Hello! I’m Mudabir, a passionate full-stack and mobile app developer with a strong foundation in the MERN stack (MongoDB, Express.js, React, Node.js) and React Native for cross-platform mobile applications. I specialize in building dynamic, user-friendly web and mobile apps, and have hands-on experience integrating Firebase services such as Firestore, Authentication, Cloud Functions, and Storage.
+
+Currently pursuing my B.Tech in Computer Science at GNA University, I enjoy creating seamless digital experiences—whether it’s an interactive portfolio, a mobile e-commerce application, or a full-fledged admin dashboard. My projects showcase my ability to merge functionality with aesthetics, and I’m always eager to explore new technologies to deliver impactful solutions. <br /> <br />
+🚀 Let’s build something amazing together! </p>
         </div>
       </div>
     </div>

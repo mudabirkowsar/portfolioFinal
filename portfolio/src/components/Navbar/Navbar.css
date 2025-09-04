@@ -22,10 +22,10 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url('../../img/intro-bg.jpg');
+    background-image: url('../../img/intro-bg1.jpg');
     background-size: contain;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
@@ -242,6 +242,4 @@ body {
         width: 30%;
         
     }
-    
-    
 }

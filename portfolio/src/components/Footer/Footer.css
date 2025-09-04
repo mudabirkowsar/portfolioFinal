@@ -1,36 +1,80 @@
-.footerMainDiv{
-    height: 40vh;
-    width: 100%;
-    background-image: url("../../img/work-2.jpg");
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.footerMainDiv {
+  width: 100%;
+  min-height: 35vh;
+  background: url("../../img/work-2.jpg") center/cover fixed no-repeat;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.footerMainDiv p{
-    /* color: white; */
-    /* font-weight: bold; */
-    text-align: center;
-    font-size: 24px;
-    padding-top: 30px;
-}
-.footerMainDiv p span{
-    font-weight: bold;
-}
-.footerSecondDiv{
-    height: 100%;
-    width: 100%;
-    background-color: #00bcd4;
-    opacity: 0.5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+/* Overlay with gradient */
+.footerSecondDiv {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 188, 212, 0.85),
+    rgba(0, 0, 0, 0.85)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
 }
 
-@media (max-width: 767px) {
-    .footerMainDiv p{
-        font-size:18px;
-    }
+/* Footer text */
+.footerSecondDiv p {
+  font-size: 20px;
+  margin: 5px 0;
+  color: #f5f5f5;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.footerSecondDiv p span {
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+/* Hover effect for designer credit */
+.footerSecondDiv p span:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  cursor: pointer;
+}
+
+/* Heart animation */
+.footerSecondDiv p:last-child {
+  font-size: 28px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    color: #ff4b5c;
+  }
+  50% {
+    transform: scale(1.2);
+    color: #ff6b81;
+  }
+  100% {
+    transform: scale(1);
+    color: #ff4b5c;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footerSecondDiv p {
+    font-size: 16px;
+  }
+
+  .footerSecondDiv p:last-child {
+    font-size: 22px;
+  }
 }

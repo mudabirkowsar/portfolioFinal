@@ -1,169 +1,219 @@
-*{
-    text-decoration: none;
+/* =============================
+   Global Reset
+   ============================= */
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-.contactMainDiv{
-    /* height: 100vh; */
-    height: auto;
+/* =============================
+   Main Container
+   ============================= */
+.contactMainDiv {
+  width: 100%;
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #f9fafb, #f1f5f9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =============================
+   Inner Container
+   ============================= */
+.contactDiv {
+  background: #fff;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+}
+
+/* =============================
+   Form Section
+   ============================= */
+.inputDiv {
+  width: 50%;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+}
+
+.inputDiv p {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1e1e2f;
+}
+
+.inputDiv p span {
+  color: #4CAF50;
+}
+
+.inputDiv input,
+.inputDiv textarea {
+  width: 100%;
+  padding: 15px 18px;
+  margin-bottom: 18px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.inputDiv input:focus,
+.inputDiv textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0px 6px 14px rgba(76, 175, 80, 0.2);
+  outline: none;
+}
+
+.inputDiv textarea {
+  height: 120px;
+  resize: none;
+}
+
+.inputDiv button {
+  width: fit-content;
+  padding: 12px 28px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #4CAF50, #2e7d32);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  margin-top: 8px;
+}
+
+.inputDiv button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+/* =============================
+   Info Section
+   ============================= */
+.contactDivText {
+  width: 50%;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+.Contact {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #1e1e2f;
+}
+
+.Contact span {
+  color: #4CAF50;
+}
+
+.contactDics {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* =============================
+   Social & Location Icons
+   ============================= */
+.locationDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.locationDiv a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  font-size: 22px;
+  transition: all 0.35s ease;
+}
+
+.locationDiv a:hover {
+  background: #4CAF50;
+  color: #fff;
+  transform: translateY(-4px) rotate(8deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* =============================
+   Responsive Design
+   ============================= */
+@media (max-width: 991px) {
+  .contactDiv {
+    flex-direction: column;
+  }
+
+  .inputDiv,
+  .contactDivText {
     width: 100%;
-    background-color: rgba(218, 216, 216, 0.532);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.contactDiv{
-    height: 80%;
-    width: 80%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
+    padding: 35px 25px;
+  }
 
-.inputDiv, .contactDivText{
-    height: 100%;
-    width: 50%;
-    /* border: 2px solid black; */
-    padding: 40px;
-}
-
-
-
-.inputDiv p{
-    font-size: 40px;
-    padding-bottom: 10px;
-}
-
-.inputDiv p span{
-    text-decoration: underline;
-    text-decoration-color: #4CAF50;
-}
-
-.inputDiv input{
-    padding: 10px;
-    height: 40px;
-    width: 90%;
-    margin-bottom: 20px;
-    /* border: 1px solid black; */
-}
-
-.inputDiv input:active{
-    border: 2px solid #4CAF50;
-}
-.inputDiv textarea{
-    padding: 10px;
-    height: 90px;
-    width: 90%;
-    margin-bottom: 20px;
-    resize: none;
-    /* border: 1px solid black; */
-}
-
-.inputDiv button{
-    height: 50px;
-    width: 200px;
-    border-radius: 30px;
-    border: 1px solid #4CAF50;
-    color: white;
-    font-size: 24px;
-    background-color: #4CAF50;
-}
-
-.inputDiv button:hover{
-    background-color: #84df87;
-}
-
-.Contact{
-    font-size: 40px;
-}
-
-.Contact span{
-    text-decoration: underline;
-    text-decoration-color: #4CAF50;
-}
-
-.contactDics{
-    font-size: 22px;
-    color: #222;
-    margin-top: 10px;
-}
-
-.locationDiv{
-    width: 100%;
-    /* border: 2px solid black; */
-    margin-top: 52px;
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
-    padding-top: 10px;
-}
-
-.locationDiv i{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-    height: 50px;
-    width: 50px;
-    border-radius: 30px;
-    border: 2px solid #4CAF50;
+  .inputDiv p,
+  .Contact {
     font-size: 28px;
-    color: black;
+  }
+
+  .inputDiv button {
+    font-size: 15px;
+    padding: 10px 22px;
+  }
+
+  .locationDiv a {
+    height: 46px;
+    width: 46px;
+    font-size: 20px;
+  }
 }
 
-.locationDiv i:hover{
-    transition: all 1s ease-in-out;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-}
+@media (max-width: 600px) {
+  .inputDiv p,
+  .Contact {
+    font-size: 24px;
+  }
 
+  .contactDics {
+    font-size: 14px;
+  }
 
-@media (max-width: 767px) {
-    .contactMainDiv{
-        margin: 0;
-        padding: 0;
-    }
-    .contactDiv{
-        margin: 0;
-        padding: 0;
-        flex-direction: column;
-        width: 100%;  
-        background-color: rgba(218, 216, 216, 0.532);
-        flex-direction: column-reverse;
-    }
+  .inputDiv input,
+  .inputDiv textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
 
-    .inputDiv{
-        width: 100%;
-    }
+  .inputDiv button {
+    font-size: 14px;
+    padding: 9px 18px;
+  }
 
-    .inputDiv button{
-        height: 40px;
-        width: 100px;
-        font-size: 22px;
-    }
-
-    .inputDiv p{
-        font-size: 20px;
-    }
-
-    .contactDivText{
-        width: 100%;
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-
-    .Contact{
-        font-size: 20px;
-    }
-
-    .contactDics{
-        font-size: 16px;
-    }
-    .locationDiv i{
-        height: 35px;
-        width: 35px;
-        font-size: 22px;
-    }
+  .locationDiv a {
+    height: 42px;
+    width: 42px;
+    font-size: 18px;
+  }
 }
