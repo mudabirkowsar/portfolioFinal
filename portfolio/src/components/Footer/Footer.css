@@ -1,80 +1,186 @@
 .footerMainDiv {
   width: 100%;
   min-height: 35vh;
-  background: url("../../img/work-2.jpg") center/cover fixed no-repeat;
+  background: radial-gradient(ellipse at center, #1a1a3e 0%, #0a0a1a 100%);
   position: relative;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
+  perspective: 1000px;
 }
 
-/* Overlay with gradient */
-.footerSecondDiv {
+/* 3D Background with Floating Shapes */
+.floating-shapes {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0, 188, 212, 0.85),
-    rgba(0, 0, 0, 0.85)
-  );
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+/* Footer Content Container */
+.footerSecondDiv {
+  position: relative;
+  width: 100%;
+  background: rgba(20, 20, 40, 0.7);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateZ(30px);
+  z-index: 2;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 15px;
-  padding: 20px;
+  transform: translateZ(20px);
 }
 
 /* Footer text */
-.footerSecondDiv p {
+.footer-tech p,
+.footer-credit p {
   font-size: 20px;
   margin: 5px 0;
-  color: #f5f5f5;
+  color: #e0e0ff;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
 }
 
-.footerSecondDiv p span {
+.tech-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  background: linear-gradient(45deg, #ff006e, #8338ec);
+  border-radius: 20px;
   font-weight: bold;
-  color: #00ffcc;
+  margin-left: 8px;
+  transform: translateZ(10px);
+  transition: all 0.3s ease;
 }
 
-/* Hover effect for designer credit */
-.footerSecondDiv p span:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-  cursor: pointer;
+.tech-badge:hover {
+  transform: translateZ(15px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(131, 56, 236, 0.4);
+}
+
+.designer-name {
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.designer-name::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.designer-name:hover::after {
+  transform: scaleX(1);
 }
 
 /* Heart animation */
-.footerSecondDiv p:last-child {
+.heart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heart p {
   font-size: 28px;
   animation: pulse 1.5s infinite;
+  transform: translateZ(15px);
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
-    color: #ff4b5c;
+    transform: translateZ(15px) scale(1);
+    color: #ff006e;
   }
   50% {
-    transform: scale(1.2);
-    color: #ff6b81;
-  }
-  100% {
-    transform: scale(1);
+    transform: translateZ(20px) scale(1.2);
     color: #ff4b5c;
   }
+  100% {
+    transform: translateZ(15px) scale(1);
+    color: #ff006e;
+  }
+}
+
+/* Footer Decoration */
+.footer-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+  transform: translateZ(10px);
+}
+
+.decoration-line {
+  flex-grow: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(131, 56, 236, 0.7), transparent);
+}
+
+.decoration-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+  margin: 0 15px;
+  box-shadow: 0 0 10px rgba(131, 56, 236, 0.5);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .footerSecondDiv p {
+  .footer-tech p,
+  .footer-credit p {
     font-size: 16px;
   }
-
-  .footerSecondDiv p:last-child {
+  .footer-heart p {
     font-size: 22px;
+  }
+  .decoration-circle {
+    width: 8px;
+    height: 8px;
+    margin: 0 10px;
   }
 }

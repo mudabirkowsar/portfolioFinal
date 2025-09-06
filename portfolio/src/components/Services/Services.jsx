@@ -43,14 +43,47 @@ const servicesData = [
 function Services() {
   return (
     <div className='servicesMainDiv'>
-      <p className='servicesText'><span className='spannn'>SERVICES</span></p>
-      <p className='servicesTextpara'>I provide full-stack web development services</p>
-
+      {/* 3D Background Elements */}
+      <div className="floating-shapes">
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={i}
+            className="shape"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 80 + 40}px`,
+              height: `${Math.random() * 80 + 40}px`,
+              animationDelay: `${Math.random() * 5}s`,
+              background: `radial-gradient(circle, ${i % 3 === 0 ? '#ff006e' : i % 3 === 1 ? '#8338ec' : '#3a86ff'}, transparent)`,
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Header Section */}
+      <div className="servicesHeader">
+        <div className="servicesTitle">
+          <span className='spannn'>SERVICES</span>
+        </div>
+        <p className='servicesTextpara'>I provide full-stack web development services</p>
+      </div>
+      
+      {/* Services Grid */}
       <div className="servicesMainListDiv">
-        {servicesData.map(service => (
-          <div key={service.id} className="serviceInnerMainDiv">
-            <div className="serviceImageDiv">
-              <i className={service.icon}></i>
+        {servicesData.map((service, index) => (
+          <div 
+            key={service.id} 
+            className="serviceInnerMainDiv"
+            style={{
+              transform: `translateZ(${20 + index * 5}px)`,
+              animationDelay: `${index * 0.1}s`,
+            }}
+          >
+            <div className="serviceIconContainer">
+              <div className="serviceImageDiv">
+                <i className={service.icon}></i>
+              </div>
             </div>
             <div className="serviceText">
               <p>{service.title}</p>
@@ -58,6 +91,7 @@ function Services() {
             <div className="serviceDesc">
               <p>{service.desc}</p>
             </div>
+            <div className="serviceGlow"></div>
           </div>
         ))}
       </div>

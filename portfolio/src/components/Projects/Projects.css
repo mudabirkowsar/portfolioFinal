@@ -1,65 +1,161 @@
-/* =============================
-   Projects Container
-   ============================= */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 3D Background with Floating Shapes */
 .projectsMainDiv {
   padding: 70px 20px;
-  background-color: #f9fafc;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #1a1a3e 0%, #0a0a1a 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
 }
 
-.projectsText {
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+/* Header Section */
+.projectsHeader {
+  text-align: center;
+  margin-bottom: 50px;
+  z-index: 2;
+  transform: translateZ(50px);
+}
+
+.projectsTitle {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.spannn {
   font-size: 42px;
   font-weight: 700;
-  margin-bottom: 12px;
-  color: #1e1e2f;
-  text-align: center;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.spannn::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+  border-radius: 2px;
 }
 
 .projectsTextpara {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 60px;
-  max-width: 750px;
   text-align: center;
-  line-height: 1.6;
+  font-size: 18px;
+  color: #e0e0ff;
+  margin-bottom: 40px;
+  max-width: 750px;
+  opacity: 0.9;
 }
 
-/* =============================
-   Projects Grid
-   ============================= */
+/* Projects Grid */
 .projectsMainListDiv {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
   width: 100%;
   max-width: 1200px;
-  padding: 0 10px;
+  z-index: 2;
+  transform-style: preserve-3d;
 }
 
 /* Project Card */
 .projectInnerMainDiv {
-  background: #fff;
-  border-radius: 14px;
+  background: rgba(20, 20, 40, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 14px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(var(--translate-z, 20px));
+  }
 }
 
 .projectInnerMainDiv:hover {
-  transform: translateY(-8px);
-  box-shadow: rgba(0, 188, 212, 0.35) 0px 12px 24px;
+  transform: translateY(-15px) translateZ(40px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(131, 56, 236, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.projectGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(131, 56, 236, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.projectInnerMainDiv:hover .projectGlow {
+  opacity: 1;
 }
 
 /* Image */
 .projectImageDiv {
-  height: 210px;
+  height: 200px;
   overflow: hidden;
-  border-bottom: 1px solid #eee;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .projectImageDiv img {
@@ -67,204 +163,260 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.7s ease;
+  transform: translateZ(10px);
 }
 
 .projectInnerMainDiv:hover .projectImageDiv img {
-  transform: scale(1.1);
+  transform: scale(1.1) translateZ(20px);
 }
 
-/* Card Text */
-.projectNameDiv {
-  padding: 18px;
-  flex-grow: 1;
-}
-
-.pName {
-  font-size: 19px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #1e1e2f;
-}
-
-.pDic {
-  font-size: 15px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* =============================
-   Modal Styling
-   ============================= */
-.modalOverlay {
-  position: fixed;
+.imageOverlay {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 15, 15, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
+  background: linear-gradient(to bottom, rgba(10, 10, 26, 0.2), rgba(10, 10, 26, 0.8));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.projectInnerMainDiv:hover .imageOverlay {
+  opacity: 1;
+}
+
+/* Project Content */
+.projectContent {
   padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(15px);
 }
 
-.modalContent {
-  background: #fff;
-  padding: 32px;
-  border-radius: 18px;
-  width: 100%;
-  max-width: 720px;
-  max-height: 90%;
-  overflow-y: auto;
+.projectHeader {
+  margin-bottom: 15px;
+}
+
+.projectTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 28px;
-  animation: fadeIn 0.4s ease, slideUp 0.45s ease;
+  display: inline-block;
 }
 
-/* Close Button */
-.closeModal {
+.projectTitle::after {
+  content: '';
   position: absolute;
-  top: 15px;
-  right: 22px;
-  font-size: 28px;
-  cursor: pointer;
-  color: #00bcd4;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-.closeModal:hover {
-  color: #0097a7;
+.projectInnerMainDiv:hover .projectTitle::after {
+  transform: scaleX(1);
 }
 
-/* Modal Content */
-.modalContent img {
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  margin-bottom: 22px;
-}
-
-.modalContent h2 {
-  font-size: 28px;
-  margin-bottom: 16px;
-  color: #00bcd4;
-}
-
-.modalDesc {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 18px;
-  line-height: 1.6;
-}
-
-.modalContent p {
-  font-size: 15px;
-  color: #444;
+.projectMeta {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
-.modalContent ul {
-  text-align: left;
-  margin-left: 20px;
-  margin-bottom: 18px;
+.projectRole, .projectDuration {
+  font-size: 13px;
+  color: #8338ec;
+  background: rgba(131, 56, 236, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
 }
 
-.modalContent ul li {
-  margin-bottom: 6px;
-  font-size: 15px;
+.projectDesc {
+  font-size: 14px;
+  color: #e0e0ff;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 0;
 }
 
-/* Buttons */
-.modalLinks {
+.projectFeatures {
+  margin-bottom: 15px;
+}
+
+.projectFeatures h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projectFeatures ul {
+  list-style: none;
+  padding-left: 5px;
+}
+
+.projectFeatures ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  color: #e0e0ff;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.projectFeatures ul li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #8338ec;
+  font-size: 10px;
+}
+
+.projectTech {
+  margin-bottom: 20px;
+}
+
+.projectTech h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.techTags {
   display: flex;
-  justify-content: center;
-  gap: 15px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  gap: 8px;
 }
 
-.modalLink {
-  padding: 10px 26px;
-  background: #00bcd4;
+.techTag {
+  background: rgba(58, 134, 255, 0.2);
+  color: #3a86ff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(58, 134, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.techTag:hover {
+  background: rgba(58, 134, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(58, 134, 255, 0.3);
+}
+
+.projectFooter {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.githubButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(45deg, #ff006e, #8338ec);
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 30px;
   font-weight: 600;
-  transition: background 0.3s, transform 0.25s;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  transform: translateZ(10px);
+  box-shadow: 0 5px 15px rgba(131, 56, 236, 0.4);
 }
 
-.modalLink:hover {
-  background: #0097a7;
-  transform: translateY(-2px) scale(1.05);
+.githubButton:hover {
+  transform: translateZ(15px) translateY(-3px);
+  box-shadow: 0 8px 20px rgba(131, 56, 236, 0.6);
 }
 
-/* =============================
-   Animations
-   ============================= */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+.githubButton i {
+  font-size: 16px;
 }
 
-@keyframes slideUp {
-  from {transform: translateY(40px); opacity: 0;}
-  to {transform: translateY(0); opacity: 1;}
-}
-
-/* =============================
-   Responsive
-   ============================= */
+/* Responsive */
 @media (max-width: 1024px) {
-  .projectsText {
+  .spannn {
     font-size: 36px;
   }
   .projectsTextpara {
     font-size: 17px;
   }
+  .projectsMainListDiv {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }
 
 @media (max-width: 767px) {
-  .projectsText {
+  .spannn {
     font-size: 30px;
   }
   .projectsTextpara {
     font-size: 15px;
     margin-bottom: 40px;
   }
+  .projectsMainListDiv {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
   .projectImageDiv {
     height: 180px;
   }
-  .modalContent {
-    padding: 22px;
+  .projectContent {
+    padding: 15px;
   }
-  .modalContent h2 {
-    font-size: 22px;
+  .projectTitle {
+    font-size: 18px;
   }
-  .modalLink {
-    padding: 8px 18px;
-    font-size: 14px;
+  .projectDesc {
+    font-size: 13px;
+  }
+  .projectFeatures h4, .projectTech h4 {
+    font-size: 13px;
+  }
+  .githubButton {
+    padding: 8px 14px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
-  .projectsText {
+  .spannn {
     font-size: 26px;
   }
   .projectsTextpara {
     font-size: 14px;
   }
-  .pName {
-    font-size: 17px;
+  .projectsMainListDiv {
+    grid-template-columns: 1fr;
   }
-  .pDic {
+  .projectContent {
+    padding: 15px;
+  }
+  .projectTitle {
+    font-size: 18px;
+  }
+  .projectDesc {
     font-size: 13px;
   }
-  .modalContent {
-    padding: 18px;
+  .projectFeatures h4, .projectTech h4 {
+    font-size: 13px;
   }
-  .modalContent h2 {
-    font-size: 20px;
+  .githubButton {
+    padding: 8px 14px;
+    font-size: 13px;
   }
 }
