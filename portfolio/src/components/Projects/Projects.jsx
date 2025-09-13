@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Projects.css";
 
 const projectsData = [
@@ -12,6 +12,11 @@ const projectsData = [
     role: "Frontend & Backend Developer",
     duration: "2 months",
     github: "https://github.com/mudabirkowsar/coffee",
+    gallery: [
+      "../../img/work-1.jpg",
+      "../../img/work-2.jpg",
+      "../../img/work-3.jpg"
+    ]
   },
   {
     id: 2,
@@ -23,6 +28,11 @@ const projectsData = [
     role: "Full Stack Developer",
     duration: "3 months",
     github: "https://github.com/mudabirkowsar/UniversityQuizApplication",
+    gallery: [
+      "../../img/work-1.jpg",
+      "../../img/work-2.jpg",
+      "../../img/work-3.jpg"
+    ]
   },
   {
     id: 3,
@@ -34,6 +44,11 @@ const projectsData = [
     role: "Frontend & Backend Developer",
     duration: "1 month",
     github: "https://github.com/mudabirkowsar/expenseTracker",
+    gallery: [
+      "../../img/work-1.jpg",
+      "../../img/work-2.jpg",
+      "../../img/work-3.jpg"
+    ]
   },
   {
     id: 4,
@@ -41,14 +56,20 @@ const projectsData = [
     title: "Cake Zone",
     desc: "A feature-rich Cake Zone website with online ordering and admin control.",
     tech: ["HTML", "CSS", "JS", "Node.js"],
-    features: ["Order online", "Admin management", "Payment integration"],
+    features: ["Order online", "Admin management"],
     role: "Full Stack Developer",
     duration: "2 months",
     github: "https://github.com/mudabirkowsar",
+    gallery: [
+      "../../img/work-1.jpg",
+      "../../img/work-2.jpg",
+      "../../img/work-3.jpg"
+    ]
   },
+
   {
     id: 5,
-    img: "../../img/work-2.jpg",
+    img: "../../foodyImgs/img1.jpg",
     title: "Foody",
     desc: "A mobile application for finding recipe online of every meal.",
     tech: ["React Native", "Css", "Tailwind", "Firebase", "Api"],
@@ -56,6 +77,14 @@ const projectsData = [
     role: "Full Stack Developer",
     duration: "2 months",
     github: "https://github.com/mudabirkowsar/cake-zone",
+    gallery: [
+      "../../foodyImgs/img1.jpg",
+      "../../foodyImgs/img2.jpg",
+      "../../foodyImgs/img3.jpg",
+      "../../foodyImgs/img4.jpg",
+      "../../foodyImgs/img5.jpg",
+      "../../foodyImgs/img6.jpg",
+    ]
   },
   {
     id: 6,
@@ -67,17 +96,40 @@ const projectsData = [
     role: "Full Stack Developer",
     duration: "2 months",
     github: "https://github.com/mudabirkowsar/Wordsy--React-Native--",
+    gallery: [
+      "../../wordsyImgs/img1.jpg",
+      "../../wordsyImgs/img2.jpg",
+      "../../wordsyImgs/img3.jpg",
+      "../../wordsyImgs/img4.jpg",
+      "../../wordsyImgs/img5.jpg",
+      "../../wordsyImgs/img6.jpg",
+      "../../wordsyImgs/img7.jpg",
+      "../../wordsyImgs/img8.jpg",
+    ]
   },
   {
     id: 7,
     img: "../../img/work-1.jpg",
-    title: "Todo",
-    desc: "A Todo Mobile Application.",
+    title: "HandyCrew",
+    desc: "A Service providing Application.",
     tech: ["React Native", "Css", "Tailwind", "Firebase"],
-    features: ["Add Todo", "Remove Todo", "Edit Todo", "Delete Todo"],
+    features: ["Add provider", "View Provider", "Hire Provider", "many more"],
     role: "Full Stack Developer",
     duration: "2 months",
-    github: "https://github.com/mudabirkowsar/TodoApp--React-Native-",
+    github: "https://github.com/mudabirkowsar/HandyCrew--React-Native-",
+    gallery: [
+      "../../handyCrewImgs/img1.jpg",
+      "../../handyCrewImgs/img2.jpg",
+      "../../handyCrewImgs/img3.jpg",
+      "../../handyCrewImgs/img4.jpg",
+      "../../handyCrewImgs/img5.jpg",
+      "../../handyCrewImgs/img6.jpg",
+      "../../handyCrewImgs/img7.jpg",
+      "../../handyCrewImgs/img8.jpg",
+      "../../handyCrewImgs/img9.jpg",
+      "../../handyCrewImgs/img10.jpg",
+      "../../handyCrewImgs/img11.jpg",
+    ]
   },
   {
     id: 8,
@@ -89,16 +141,43 @@ const projectsData = [
     role: "Full Stack Developer",
     duration: "2 months",
     github: "https://github.com/mudabirkowsar/Zest-E-Commerce--React-Native-",
+    gallery: [
+      "../../zestImgs/img1.jpg",
+      "../../zestImgs/img2.jpg",
+      "../../zestImgs/img3.jpg",
+      "../../zestImgs/img4.jpg",
+      "../../zestImgs/img5.jpg",
+      "../../zestImgs/img6.jpg",
+      "../../zestImgs/img7.jpg",
+      "../../zestImgs/img8.jpg",
+      "../../zestImgs/img9.jpg",
+      "../../zestImgs/img10.jpg",
+      "../../zestImgs/img11.jpg",
+      "../../zestImgs/img12.jpg",
+    ]
   },
 ];
 
 function Projects() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setIsModalOpen(false);
+  };
+
   return (
     <div className='projectsMainDiv'>
-      {/* 3D Background Elements */}
+      {/* Floating Background */}
       <div className="floating-shapes">
         {[...Array(8)].map((_, i) => (
-          <div 
+          <div
             key={i}
             className="shape"
             style={{
@@ -112,15 +191,15 @@ function Projects() {
           />
         ))}
       </div>
-      
-      {/* Header Section */}
+
+      {/* Header */}
       <div className="projectsHeader">
         <div className="projectsTitle">
           <span className='spannn'>PROJECTS</span>
         </div>
         <p className='projectsTextpara'>Explore my diverse projects showcasing expertise in full-stack development</p>
       </div>
-      
+
       {/* Projects Grid */}
       <div className="projectsMainListDiv">
         {projectsData.map((project, index) => (
@@ -136,7 +215,7 @@ function Projects() {
               <img src={project.img} alt={project.title} />
               <div className="imageOverlay"></div>
             </div>
-            
+
             <div className="projectContent">
               <div className="projectHeader">
                 <h3 className="projectTitle">{project.title}</h3>
@@ -145,9 +224,9 @@ function Projects() {
                   <span className="projectDuration">{project.duration}</span>
                 </div>
               </div>
-              
+
               <p className="projectDesc">{project.desc}</p>
-              
+
               <div className="projectFeatures">
                 <h4>Key Features:</h4>
                 <ul>
@@ -156,7 +235,7 @@ function Projects() {
                   ))}
                 </ul>
               </div>
-              
+
               <div className="projectTech">
                 <h4>Technologies:</h4>
                 <div className="techTags">
@@ -165,23 +244,46 @@ function Projects() {
                   ))}
                 </div>
               </div>
-              
+
               <div className="projectFooter">
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
                   className="githubButton"
                 >
                   <i className="fab fa-github"></i> View on GitHub
                 </a>
+                <button
+                  className="viewButton"
+                  onClick={() => openModal(project)}
+                >
+                  👁 View
+                </button>
               </div>
             </div>
-            
+
             <div className="projectGlow"></div>
           </div>
         ))}
       </div>
+
+      {/* Modal */}
+      {isModalOpen && selectedProject && (
+        <div className="modalOverlay" onClick={closeModal}>
+          <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+            <h2 className="modalTitle">{selectedProject.title}</h2>
+            <div className="modalGallery">
+              {selectedProject.gallery.map((img, idx) => (
+                <div key={idx} className="modalImageBox">
+                  <img src={img} alt={`${selectedProject.title} ${idx + 1}`} />
+                </div>
+              ))}
+            </div>
+            <button className="closeModal" onClick={closeModal}>✖ Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
