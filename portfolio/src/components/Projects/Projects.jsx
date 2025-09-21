@@ -76,7 +76,7 @@ const projectsData = [
     features: ["Find Recipe", "Favorite It", "Authentication"],
     role: "Full Stack Developer",
     duration: "2 months",
-    github: "https://github.com/mudabirkowsar/cake-zone",
+    github: "https://github.com/mudabirkowsar",
     gallery: [
       "../../foodyImgs/img1.jpg",
       "../../foodyImgs/img2.jpg",

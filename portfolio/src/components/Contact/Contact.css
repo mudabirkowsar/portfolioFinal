@@ -50,6 +50,10 @@
     transform: translateY(-20px) rotate(10deg);
   }
 }
+.result-para{
+  font-size: 14px;
+  color: #ffffff;
+}
 
 /* =============================
    Inner Container

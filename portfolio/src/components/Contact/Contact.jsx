@@ -1,13 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Contact.css"
 
 function Contact() {
+
+    const [result, setResult] = useState("");
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(event.target);
+
+        formData.append("access_key", "074aa678-34dc-4da1-9ffd-e6f79348afe9");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            setResult("Submitted successfully.")
+            event.target.reset();
+        } else {
+            setResult("Try again after some time")
+            console.log("Error", data);
+        }
+    };
+
     return (
         <div className='contactMainDiv'>
             {/* 3D Background Elements */}
             <div className="floating-shapes">
                 {[...Array(8)].map((_, i) => (
-                    <div 
+                    <div
                         key={i}
                         className="shape"
                         style={{
@@ -21,28 +47,31 @@ function Contact() {
                     />
                 ))}
             </div>
-            
+
             <div className="contactDiv">
                 <div className="inputDiv">
                     <div className="form-header">
                         <p><span>Send</span> Message</p>
                         <div className="header-decoration"></div>
                     </div>
-                    <div className="form-group">
-                        <input type="text" name="" id="" placeholder='Your Name' />
-                    </div>
-                    <div className="form-group">
-                        <input type="text" name="" id="" placeholder='Your Email' />
-                    </div>
-                    <div className="form-group">
-                        <input type="text" name="" id="" placeholder='Your Subject' />
-                    </div>
-                    <div className="form-group">
-                        <textarea name="" id="" placeholder='Your Message'></textarea>
-                    </div>
-                    <button className="send-button">Send</button>
+                    <form onSubmit={onSubmit}>
+                        <div className="form-group">
+                            <input type="text" name="name" required placeholder='Your Name' />
+                        </div>
+                        <div className="form-group">
+                            <input type="email" name="email" required placeholder='Your Email' />
+                        </div>
+                        <div className="form-group">
+                            <input type="name" name="subject" placeholder='Your Subject' />
+                        </div>
+                        <div className="form-group">
+                            <textarea name="message" required placeholder='Your Message'></textarea>
+                        </div>
+                        <button className="send-button">Send</button>
+                    </form>
+                    <p className='result-para'>{result}</p>
                 </div>
-                
+
                 <div className="contactDivText">
                     <div className="contact-header">
                         <p className='Contact'><span>Contact</span> Me</p>
