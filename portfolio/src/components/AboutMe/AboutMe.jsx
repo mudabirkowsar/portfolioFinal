@@ -26,7 +26,7 @@ function AboutMe() {
           <div className="aboutMeUpperDiv">
             <div className="profilPhotoDiv">
               <div className="photoDIv">
-                <img src="../../../public/profileImgs/pro1.png" alt="Profile" />
+                <img src="/profileImgs/pro1.png" alt="Profile" />
                 <div className="photo-glow"></div>
               </div>
             </div>
